@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+    <TextView
+        android:id="@+id/txvCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cliente guapo" />
+    <TextView
+        android:id="@+id/txvProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Producto bien sabroso" />
+    <TextView
+        android:id="@+id/txvEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Estado pedido"
+        android:textStyle="italic" />
+</LinearLayout>
