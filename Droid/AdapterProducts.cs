@@ -47,7 +47,7 @@ namespace SCM.Droid
             view.FindViewById<TextView>(Resource.Id.txvPrecio).Text ="$"+ item.price.ToString();
             Glide.With(context)
                  .Load(item.imagen)
-                 .Into(view.FindViewById<Refractored.Controls.CircleImageView>(Resource.Id.imgProducto));       
+                 .Into(view.FindViewById<ImageView>(Resource.Id.imgProducto));       
             return view;
         }
     }

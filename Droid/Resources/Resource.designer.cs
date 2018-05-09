@@ -333,11 +333,11 @@ namespace SCM.Droid
 			// aapt resource value: 0x7f0b0007
 			public const int blocking = 2131427335;
 			
-			// aapt resource value: 0x7f0b0034
-			public const int btnCancelarPedido = 2131427380;
+			// aapt resource value: 0x7f0b0036
+			public const int btnCancelarPedido = 2131427382;
 			
-			// aapt resource value: 0x7f0b0035
-			public const int btnDondeEstasPedido = 2131427381;
+			// aapt resource value: 0x7f0b0037
+			public const int btnDondeEstasPedido = 2131427383;
 			
 			// aapt resource value: 0x7f0b000d
 			public const int btnGuardarDialog = 2131427341;
@@ -345,8 +345,8 @@ namespace SCM.Droid
 			// aapt resource value: 0x7f0b002c
 			public const int btnHacerPedido = 2131427372;
 			
-			// aapt resource value: 0x7f0b0036
-			public const int btnPedidoRecibido = 2131427382;
+			// aapt resource value: 0x7f0b0038
+			public const int btnPedidoRecibido = 2131427384;
 			
 			// aapt resource value: 0x7f0b0012
 			public const int btnVerPedidos = 2131427346;
@@ -396,8 +396,8 @@ namespace SCM.Droid
 			// aapt resource value: 0x7f0b0009
 			public const int italic = 2131427337;
 			
-			// aapt resource value: 0x7f0b0032
-			public const int layUbicacion = 2131427378;
+			// aapt resource value: 0x7f0b0034
+			public const int layUbicacion = 2131427380;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int line1 = 2131427328;
@@ -441,6 +441,12 @@ namespace SCM.Droid
 			// aapt resource value: 0x7f0b0004
 			public const int text2 = 2131427332;
 			
+			// aapt resource value: 0x7f0b0032
+			public const int textView1 = 2131427378;
+			
+			// aapt resource value: 0x7f0b0030
+			public const int textView2 = 2131427376;
+			
 			// aapt resource value: 0x7f0b001e
 			public const int time = 2131427358;
 			
@@ -456,8 +462,8 @@ namespace SCM.Droid
 			// aapt resource value: 0x7f0b0028
 			public const int txvDescripcionPedido = 2131427368;
 			
-			// aapt resource value: 0x7f0b0030
-			public const int txvEstadoDetalle = 2131427376;
+			// aapt resource value: 0x7f0b0033
+			public const int txvEstadoDetalle = 2131427379;
 			
 			// aapt resource value: 0x7f0b0031
 			public const int txvFechaDetalle = 2131427377;
@@ -471,8 +477,8 @@ namespace SCM.Droid
 			// aapt resource value: 0x7f0b0029
 			public const int txvPrecioPedido = 2131427369;
 			
-			// aapt resource value: 0x7f0b0033
-			public const int txvUbicacion = 2131427379;
+			// aapt resource value: 0x7f0b0035
+			public const int txvUbicacion = 2131427381;
 			
 			static Id()
 			{
@@ -628,6 +634,9 @@ namespace SCM.Droid
 			
 			// aapt resource value: 0x7f050003
 			public const int CardView_Light = 2131034115;
+			
+			// aapt resource value: 0x7f050010
+			public const int MyActionBar = 2131034128;
 			
 			// aapt resource value: 0x7f050009
 			public const int TextAppearance_Compat_Notification = 2131034121;

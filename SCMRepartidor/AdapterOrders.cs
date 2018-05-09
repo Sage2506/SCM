@@ -34,9 +34,9 @@ namespace SCMRepartidor
             View view = convertView;
             if (view == null)
                 view = context.LayoutInflater.Inflate(Resource.Layout.itemPedidos, null);
-            view.FindViewById<TextView>(Resource.Id.txvCliente).Text = item.Client;
-            view.FindViewById<TextView>(Resource.Id.txvProducto).Text = item.DescriptionProduct;
-            view.FindViewById<TextView>(Resource.Id.txvEstado).Text = item.State;
+			view.FindViewById<TextView>(Resource.Id.txvCliente).Text = "Cliente: "+item.Client;
+			view.FindViewById<TextView>(Resource.Id.txvProducto).Text ="Auto: "+item.DescriptionProduct;
+			view.FindViewById<TextView>(Resource.Id.txvEstado).Text = "Estado: "+item.State;
              return view;
         }
 

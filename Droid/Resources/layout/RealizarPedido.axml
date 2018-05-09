@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="#ffffff">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -13,56 +14,66 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <!--<ImageView
-            android:id="@+id/imgProducto"
-            android:layout_width="50dp"
-            android:layout_height="50dp"/>-->
-            <refractored.controls.CircleImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/imgProductoPedido" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
                 android:orientation="vertical"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="3dp">
+                <ImageView
+                    android:id="@+id/imgProductoPedido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/txvDescripcionPedido"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Producto 1" />
+                    android:textAlignment="center"
+                    android:text="Producto 1"
+                    android:textColor="#000000" />
                 <TextView
                     android:id="@+id/txvPrecioPedido"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Precio" />
+                    android:textAlignment="center"
+                    android:text="Precio"
+                    android:textColor="#000000" />
             </LinearLayout>
         </LinearLayout>
         <TextView
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre" />
+            android:text="Nombre"
+            android:textColor="#000000" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:id="@+id/edtCliente" />
+            android:id="@+id/edtCliente"
+            android:hint="Nombre"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Celular" />
+            android:text="Celular"
+            android:textColor="#000000" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:id="@+id/edtTelefono"
-            android:maxLength="10" />
+            android:maxLength="10"
+            android:hint="Phone"
+            android:textColor="#000000"
+            android:textColorHint="#000000" />
     </LinearLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hacer pedido"
-        android:id="@+id/btnHacerPedido" />
+        android:id="@+id/btnHacerPedido"
+        android:background="#01406C" />
 </LinearLayout>

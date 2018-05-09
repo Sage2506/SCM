@@ -2,16 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffffff">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lvProductos"
         android:layout_margin="5dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="#ffffffff" />
     <Button
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="Ver Pedidos"
-        android:id="@+id/btnVerPedidos" />
+        android:id="@+id/btnVerPedidos"
+        android:textColor="#FFFFFF"
+        android:background="#01406C"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
 </LinearLayout>

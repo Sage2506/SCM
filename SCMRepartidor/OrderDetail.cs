@@ -15,7 +15,7 @@ using SCM;
 
 namespace SCMRepartidor
 {
-    [Activity(Label = "DetallePedido")]
+    [Activity(Label = "Pedido")]
     public class OrderDetail : Activity, Android.Locations.ILocationListener
     {
 		private TextView tvDate, tvPrice, tvState, tvProduct, tvClient, tvPhone;
@@ -125,11 +125,11 @@ namespace SCMRepartidor
                 OnResume();
             };*/
             btnDontDeliever.Click += (object sender, EventArgs e) => {
-                repo.ForwardOrder(OrderId, "NoEntregado");
+                repo.ForwardOrder(OrderId, "No Entregado");
                 OnResume();
             };
             btnLocation.Click += (object sender, EventArgs e) => {
-                Toast.MakeText(this,"Ya casi llego jefe, vaya sacando la feria",ToastLength.Long).Show();
+                Toast.MakeText(this,"Ya casi en lugar",ToastLength.Long).Show();
                
             };
 
@@ -138,7 +138,7 @@ namespace SCMRepartidor
 
             // Create your application here
             pedClient.OnWaitingOrder += (object sender, EventArgs e) => {
-                Toast.MakeText(this, "Está esperando..", ToastLength.Long).Show();
+                Toast.MakeText(this, "Esperando..", ToastLength.Long).Show();
             };
 
            
@@ -154,7 +154,7 @@ namespace SCMRepartidor
 
             tvProduct.Text = ord.DescriptionProduct;
             tvDate.Text = ord.OrderDate.ToString("dd/MM/yyyy");
-            tvPrice.Text = ord.ProductPrice.ToString();
+			tvPrice.Text = "Precio: $"+ord.ProductPrice.ToString();
             tvClient.Text = "Cliente: " + ord.Client;
             tvPhone.Text = "Telefono: " + ord.Phone;
 
@@ -169,13 +169,13 @@ namespace SCMRepartidor
                 btnForward.Visibility = ViewStates.Gone;
                 btnDeliever.Visibility = ViewStates.Gone;
                 btnDontDeliever.Visibility = ViewStates.Gone;
-            }else if(ord.State == "EnProceso" || ord.State == "CortandoVegetales" || ord.State == "CocinandoCarne" || ord.State == "ArmandoPlatillo" ){
+            }else if(ord.State == "En Proceso" || ord.State == "Armando" || ord.State == "Ensamblando" || ord.State == "Pintando" ){
                 btnStart.Visibility = ViewStates.Gone;
                 btnLocation.Visibility = ViewStates.Gone;
                 btnForward.Visibility = ViewStates.Visible;
                 btnDeliever.Visibility = ViewStates.Gone;
                 btnDontDeliever.Visibility = ViewStates.Gone;
-            }else if(ord.State == "EnTransito"){
+            }else if(ord.State == "En Transito"){
                 btnStart.Visibility = ViewStates.Gone;
                 btnLocation.Visibility = ViewStates.Gone;
                 btnForward.Visibility = ViewStates.Gone;
@@ -183,14 +183,14 @@ namespace SCMRepartidor
                 btnDontDeliever.Visibility = ViewStates.Visible;
                 await pedClient.Connection();
 				await pedClient.StartRun(ord.OrderId);
-            }else if(ord.State == "Entregado" || ord.State == "NoEntregado"){
+            }else if(ord.State == "Entregado" || ord.State == "No Entregado"){
                 btnStart.Visibility = ViewStates.Gone;
                 btnLocation.Visibility = ViewStates.Gone;
                 btnForward.Visibility = ViewStates.Gone;
                 btnDeliever.Visibility = ViewStates.Gone;
                 btnDontDeliever.Visibility = ViewStates.Gone;
-                Toast.MakeText(this, "Su pedido ya ha sido entregado o no.", ToastLength.Long).Show();
-            }else if(ord.State == "Cancelado"){
+                Toast.MakeText(this, "El Pedido ya fue entregado.", ToastLength.Long).Show();
+            }else if(ord.State == "Cancelled"){
                 btnStart.Visibility = ViewStates.Gone;
                 btnLocation.Visibility = ViewStates.Gone;
                 btnForward.Visibility = ViewStates.Gone;
@@ -209,7 +209,7 @@ namespace SCMRepartidor
 
 		void BtnStart_Click(object sender, EventArgs e)
 		{
-                repo.ForwardOrder(OrderId, "EnProceso");
+                repo.ForwardOrder(OrderId, "En Proceso");
                 OnResume();
 		}
 
@@ -218,10 +218,10 @@ namespace SCMRepartidor
         {
             if (ord.State == "New")
             {
-				await repo.ForwardOrder(OrderId, "EnProceso");
+				await repo.ForwardOrder(OrderId, "En Proceso");
             }
-			else if (ord.State == "EnProceso")
-            {
+			else if (ord.State == "En Proceso")
+            { 
 				await repo.ForwardOrder(OrderId, "Armando");
             }
 			else if (ord.State == "Armando")
@@ -235,12 +235,7 @@ namespace SCMRepartidor
             }
 			else if (ord.State == "Pintando")
             {
-				await repo.ForwardOrder(OrderId, "EnTransito");
-
-            }
-			else if (ord.State == "Pintando")
-            {
-                await repo.ForwardOrder(OrderId, "Entregado");
+				await repo.ForwardOrder(OrderId, "En Transito");
 
             }
 

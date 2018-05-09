@@ -8,7 +8,7 @@ using Android.Content;
 
 namespace SCMRepartidor
 {
-    [Activity(Label = "SCMRepartidor", MainLauncher = true)]
+    [Activity(Label = "Negocio", MainLauncher = true)]
     public class MainActivity : Activity
     {
 		ListView list;
@@ -48,7 +48,7 @@ namespace SCMRepartidor
             enterDetail.PutExtra("Posicion", position);
 			StartActivity(enterDetail);
            
-            Toast.MakeText(this, "Seleccionado: " + Orders[position].OrderDetail, ToastLength.Short).Show();
+			Toast.MakeText(this, "Pedido: " + Orders[position].OrderId, ToastLength.Short).Show();
         }
     }
 }

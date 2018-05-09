@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="#ffffff">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -24,17 +25,18 @@
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="5dp">
-                        <refractored.controls.CircleImageView
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:id="@+id/imgProductoDetalle" />
+                        android:padding="5dp"
+                        android:background="#01406C">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_gravity="center_vertical"
                             android:layout_marginLeft="5dp">
+                            <ImageView
+                                android:id="@+id/imgProductoDetalle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
                             <TextView
                                 android:id="@+id/txvDescripcionDetalle"
                                 android:layout_width="match_parent"
@@ -65,30 +67,11 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Estado del Pedido"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:id="@+id/txvEstadoDetalle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:text="Estatus_Pedido"
-                            android:textStyle="italic"
-                            android:layout_marginLeft="5dp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-                        <TextView
-                            android:layout_marginTop="7dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
                             android:textAlignment="center"
-                            android:text="Fecha del pedido"
-                            android:textStyle="bold" />
+                            android:text="Fecha de la orden"
+                            android:textStyle="bold"
+                            android:textColor="#2A3740"
+                            android:id="@+id/textView2" />
                         <TextView
                             android:id="@+id/txvFechaDetalle"
                             android:layout_width="match_parent"
@@ -96,7 +79,28 @@
                             android:textSize="14sp"
                             android:textAlignment="center"
                             android:text="Fecha_pedido"
-                            android:layout_marginRight="5dp" />
+                            android:layout_marginRight="5dp"
+                            android:textColor="#2A3740" />
+                        <TextView
+                            android:layout_marginTop="7dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:textColor="#2A3740"
+                            android:id="@+id/textView1"
+                            android:text="Fase" />
+                        <TextView
+                            android:id="@+id/txvEstadoDetalle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textAlignment="center"
+                            android:text="Estatus_Pedido"
+                            android:textStyle="italic"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="#2A3740" />
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -110,32 +114,39 @@
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
                         android:text="Ubicación del pedido"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="#2A3740" />
                     <TextView
                         android:id="@+id/txvUbicacion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="Ubicacion_pedido"
+                        android:text="Ubicacion"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="italic" />
+                        android:textStyle="normal"
+                        android:textColor="#2A3740" />
                 </LinearLayout>
             </LinearLayout>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Cancelar Pedido"
-                android:id="@+id/btnCancelarPedido" />
+                android:id="@+id/btnCancelarPedido"
+                android:textColor="#000000"
+                android:background="#ED242D" />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="¿Dónde está mi pedido?"
-                android:id="@+id/btnDondeEstasPedido" />
+                android:id="@+id/btnDondeEstasPedido"
+                android:background="#F8F8F2"
+                android:textColor="#000000" />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Pedido Recibido"
-                android:id="@+id/btnPedidoRecibido" />
+                android:id="@+id/btnPedidoRecibido"
+                android:background="#188C4A" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

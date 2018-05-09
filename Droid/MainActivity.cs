@@ -7,7 +7,7 @@ using Android.Views;
 
 namespace SCM.Droid
 {
-    [Activity(Label = "SCM", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "Cliente", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
         
@@ -80,7 +80,7 @@ namespace SCM.Droid
                 //intent.PutExtra("Posicion", e.Position);
                 StartActivity(intent);
             }else{
-                Toast.MakeText(this, "Lo sentimos. No tiene pedidos.\nLo invitamos a realizar uno.", ToastLength.Long).Show();
+                Toast.MakeText(this, "No tiene pedidos encargados.", ToastLength.Long).Show();
             }
         }
 

@@ -71,7 +71,8 @@ namespace SCM
             else
             {
                 return false;
-            }        }
+            }        
+		}
 
         public async Task<bool> CompleteOrder(string pedidoid)
         {

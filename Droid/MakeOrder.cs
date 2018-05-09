@@ -14,7 +14,7 @@ using Com.Bumptech.Glide;
 
 namespace SCM.Droid
 {
-    [Activity(Label = "RealizarPedido")]
+    [Activity(Label = "Hacer Pedido")]
     public class MakeOrder : Activity
     {
         Product prod;
@@ -38,8 +38,8 @@ namespace SCM.Droid
             prod = MainActivity.productos[position];
             Glide.With(this)
                  .Load(prod.imagen)
-                 .Into(FindViewById<Refractored.Controls.CircleImageView>(Resource.Id.imgProductoPedido));
-            FindViewById<TextView>(Resource.Id.txvPrecioPedido).Text = "$"+prod.price.ToString();
+                 .Into(FindViewById<ImageView>(Resource.Id.imgProductoPedido));
+			FindViewById<TextView>(Resource.Id.txvPrecioPedido).Text = "Precio: $"+prod.price.ToString();
             tvProduct = FindViewById<TextView>(Resource.Id.txvDescripcionPedido);
             etClient = FindViewById<EditText>(Resource.Id.edtCliente);
             etPhone = FindViewById<EditText>(Resource.Id.edtTelefono);

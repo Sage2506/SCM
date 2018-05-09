@@ -3,27 +3,33 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:background="#ffffff">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresa Nombre"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:textColor="#000000" />
     <EditText
         android:id="@+id/edtDialogNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textColorHighlight="#000000" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingresa número celular"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:textColor="#000000" />
     <EditText
         android:id="@+id/edtDialogCeluar"
         android:layout_width="match_parent"
@@ -31,10 +37,13 @@
         android:layout_marginTop="10dp"
         android:inputType="phone"
         android:maxLines="1"
-        android:maxLength="10" />
+        android:maxLength="10"
+        android:textColor="#000000" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar datos"
-        android:id="@+id/btnGuardarDialog" />
+        android:id="@+id/btnGuardarDialog"
+        android:background="#01406C"
+        android:textColor="#ffffff" />
 </LinearLayout>

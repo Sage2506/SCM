@@ -60,7 +60,7 @@ namespace SCM
 
         public Task StartRun(string pedidoId){
             if(hubConnection.State == ConnectionState.Connected){
-                return proxy.Invoke("StartRun", pedidoId);
+				return proxy.Invoke("IniciarRecorrido", pedidoId);
             }
             return Task.FromResult(0);
 
@@ -69,7 +69,7 @@ namespace SCM
         public Task WaitOrder(string pedidoId){
             if (hubConnection.State == ConnectionState.Connected)
             {
-				return proxy.Invoke("WaitOrder", pedidoId);
+				return proxy.Invoke("EsperarPedido", pedidoId);
             }
             return Task.FromResult(0);
         }
@@ -77,7 +77,7 @@ namespace SCM
 		public Task NotifyLocation(string OrderId,double lat, double lon){
             if (hubConnection.State == ConnectionState.Connected)
             {
-				return proxy.Invoke("NotifyLocation", OrderId, lat, lon);
+				return proxy.Invoke("NotificarUbicacion", OrderId, lat, lon);
             }
             return Task.FromResult(0);
         }
@@ -85,7 +85,7 @@ namespace SCM
 		public Task WheresMyOrder(string OrderId){
             if (hubConnection.State == ConnectionState.Connected)
             {
-				return proxy.Invoke("WheresMyOrder", OrderId);
+				return proxy.Invoke("DondeEstaMiComida", OrderId);
             }
             return Task.FromResult(0);           
         }

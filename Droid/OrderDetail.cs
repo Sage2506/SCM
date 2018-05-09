@@ -14,7 +14,7 @@ using Com.Bumptech.Glide;
 
 namespace SCM.Droid
 {
-    [Activity(Label = "DetallePedido")]
+    [Activity(Label = "Detalles del Pedido")]
     public class OrderDetail  : Activity
     {
         private TextView txvFecha, txvPrecio, txvEstado, txvProducto,txvUbicacion;
@@ -53,7 +53,7 @@ namespace SCM.Droid
             };
 
             btnGet.Click += (object sender, EventArgs e) => {
-				repo.ForwardOrder(ord.OrderDetail, "Entregado");
+				repo.ForwardOrder(ord.OrderId, "Entregado");
                 Toast.MakeText(this, "Su pedido ha sido completado.", ToastLength.Long).Show();
                 Finish();
             };
@@ -72,16 +72,16 @@ namespace SCM.Droid
             txvProducto.Text = ord.DescriptionProduct;
             txvFecha.Text = ord.OrderDate.ToString("dd/MM/yyyy");
             txvEstado.Text = ord.State;
-            txvPrecio.Text = ord.ProductPrice.ToString();
+            txvPrecio.Text = "$"+ord.ProductPrice.ToString();
             //buscaImagen(ord.Product);
 
             //Estados = Nuevo, En Proceso, Cortando Vegetales, Cocinando Carne,
             //          Armando platillo, En transito, Entregado, No entregado
-            if(ord.State == "Nuevo"){
+            if(ord.State == "New"){
                 btnGet.Visibility = ViewStates.Gone;
                 btnLocation.Visibility = ViewStates.Gone;
                 layUbicacion.Visibility = ViewStates.Gone;
-            }else if(ord.State == "EnProceso"){
+            }else if(ord.State == "En Proceso"){
                 btnLocation.Visibility = ViewStates.Gone;
                 btnCancel.Visibility = ViewStates.Gone;
                 btnGet.Visibility = ViewStates.Gone;
@@ -101,14 +101,14 @@ namespace SCM.Droid
                 btnCancel.Visibility = ViewStates.Gone;
                 btnGet.Visibility = ViewStates.Gone;
                 layUbicacion.Visibility = ViewStates.Gone;
-            }else if(ord.State == "EnTransito"){
+            }else if(ord.State == "En Transito"){
                 btnLocation.Visibility = ViewStates.Gone;
                 btnCancel.Visibility = ViewStates.Gone;
                 btnGet.Visibility = ViewStates.Visible;
                 layUbicacion.Visibility = ViewStates.Visible;
                 await ordClient.Connection();
-                await ordClient.WaitOrder(ord.OrderDetail);
-            }else if(ord.State == "Entregado" || ord.State == "NoEntregado"){
+				await ordClient.WaitOrder(ord.OrderId);
+            }else if(ord.State == "Entregado" || ord.State == "No Entregado"){
                 btnLocation.Visibility = ViewStates.Gone;
                 btnCancel.Visibility = ViewStates.Gone;
                 btnGet.Visibility = ViewStates.Gone;
@@ -139,7 +139,7 @@ namespace SCM.Droid
 
         void BtnCancelar_Click(object sender, EventArgs e)
         {
-			repo.CancelOrder(ord.OrderDetail);
+			repo.CancelOrder(ord.OrderId);
             Finish();
             Toast.MakeText(this, "Pedido Cancelado", ToastLength.Long);
         }
